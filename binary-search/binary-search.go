@@ -23,12 +23,26 @@ func binarySearch(values []int, search int) int {
 	return -1
 }
 
+func expect(a int, b int) bool {
+	if a == b {
+		return true
+	} else {
+		return false
+	}
+}
+
 func main() {
 	a := []int{1, 5, 22, 33, 40}
 	b := []int{1, 2, 3, 4, 5}
-	aSearch := binarySearch(a, 22)
 
+	aSearch := binarySearch(a, 22)
 	bSearch := binarySearch(b, 22)
-	fmt.Println("expect truthy: ", aSearch)
-	fmt.Println("expect falsey: ", bSearch)
+	cSearch := binarySearch(a, 1)
+	dSearch := binarySearch(a, 33)
+
+	fmt.Println("expect 2: ", expect(2, aSearch))
+	fmt.Println("expect -1: ", expect(-1, bSearch))
+	fmt.Println("expect 0: ", expect(0, cSearch))
+	fmt.Println("expect 3: ", expect(3, dSearch))
+
 }
