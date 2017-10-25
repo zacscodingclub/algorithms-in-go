@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/zacscodingclub/algorithms-in-go/test-util"
+)
 
 // for integers
 func binarySearch(values []int, search int) int {
@@ -23,14 +27,6 @@ func binarySearch(values []int, search int) int {
 	return -1
 }
 
-func expect(a int, b int) bool {
-	if a == b {
-		return true
-	} else {
-		return false
-	}
-}
-
 func main() {
 	a := []int{1, 5, 22, 33, 40}
 	b := []int{1, 2, 3, 4, 5}
@@ -40,9 +36,9 @@ func main() {
 	cSearch := binarySearch(a, 1)
 	dSearch := binarySearch(a, 33)
 
-	fmt.Println("expect 2: ", expect(2, aSearch))
-	fmt.Println("expect -1: ", expect(-1, bSearch))
-	fmt.Println("expect 0: ", expect(0, cSearch))
-	fmt.Println("expect 3: ", expect(3, dSearch))
+	fmt.Println("expect 2: ", testutil.Expect(2, aSearch))
+	fmt.Println("expect -1: ", testutil.Expect(-1, bSearch))
+	fmt.Println("expect 0: ", testutil.Expect(0, cSearch))
+	fmt.Println("expect 3: ", testutil.Expect(3, dSearch))
 
 }

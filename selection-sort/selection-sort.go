@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	testutil "github.com/zacscodingclub/algorithms-in-go/test-util"
+)
 
 func findSmallest(values []int) int {
 	smallest := values[0]
@@ -35,5 +39,6 @@ func main() {
 
 	sorted := selectionSort(a)
 
-	fmt.Println(sorted)
+	testCase := []int{1, 2, 3, 4, 8, 9, 11, 12, 13, 15, 17, 18, 20, 21, 23, 29, 33, 55, 70, 200}
+	fmt.Println("expect true: ", testutil.ExpectSlice(sorted, testCase))
 }
